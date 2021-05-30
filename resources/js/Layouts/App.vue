@@ -87,7 +87,7 @@ export default {
         {
           label: "Favorites",
           icon: "pi pi-fw pi-home",
-          items: [{ label: "Dashboard", icon: "pi pi-fw pi-home", to: "/" }],
+          items: [{ label: "Dashboard", icon: "pi pi-fw pi-home", to: "/dashboard" }],
         },
         { separator: true },
         {
