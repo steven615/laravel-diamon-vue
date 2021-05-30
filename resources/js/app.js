@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 // Import modules...
-import { createApp, h } from 'vue';
+import { createApp, h, reactive } from 'vue';
 import { App as InertiaApp, plugin as InertiaPlugin } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 
@@ -29,7 +29,11 @@ const app = createApp({
   .use(PrimeVue, { ripple: true })
   .component('Button', Button)
   .component('InputText', InputText)
-  .component('Password', Password)
-  .mount(el);
+  .component('Password', Password);
+  
+
+app.config.globalProperties.$appState = reactive({ inputStyle: 'outlined' });
 
 InertiaProgress.init({ color: '#4B5563' });
+
+app.mount(el);
