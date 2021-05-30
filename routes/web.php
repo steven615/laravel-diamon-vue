@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/crud', function () {
     return Inertia::render('Crud');
-})->name('dashboard');
+})->name('crud');
+
+Route::middleware('auth:sanctum')->resource('/product', ProductController::class);

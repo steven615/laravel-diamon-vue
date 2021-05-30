@@ -26518,7 +26518,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
  // server base url for axios request
 
-var baseUrl = 'http://127.0.0.1:8000/api/product'; // Products service for products crud
+var baseUrl = 'product'; // Products service for products crud
 
 var ProductService = /*#__PURE__*/function () {
   function ProductService() {

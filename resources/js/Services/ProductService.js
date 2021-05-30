@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // server base url for axios request
-const baseUrl = 'http://127.0.0.1:8000/api/product';
+const baseUrl = 'product';
 
 // Products service for products crud
 export default class ProductService {
