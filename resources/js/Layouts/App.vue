@@ -17,7 +17,7 @@
       ></AppTopBar>
 
       <div class="layout-content">
-        
+        <slot></slot>
       </div>
       <AppFooter />
     </div>

@@ -6,8 +6,11 @@ import { App as InertiaApp, plugin as InertiaPlugin } from '@inertiajs/inertia-v
 import { InertiaProgress } from '@inertiajs/progress';
 
 import PrimeVue from 'primevue/config';
+import Dropdown from 'primevue/dropdown';
+import RadioButton from 'primevue/radiobutton';
 import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
+import InputSwitch from 'primevue/inputswitch';
 import Password from 'primevue/password';
 
 import 'primevue/resources/primevue.min.css';
@@ -27,8 +30,11 @@ const app = createApp({
   .mixin({ methods: { route } })
   .use(InertiaPlugin)
   .use(PrimeVue, { ripple: true })
+  .component('Dropdown', Dropdown)
+  .component('RadioButton', RadioButton)
   .component('Button', Button)
   .component('InputText', InputText)
+  .component('InputSwitch', InputSwitch)
   .component('Password', Password);
   
 
