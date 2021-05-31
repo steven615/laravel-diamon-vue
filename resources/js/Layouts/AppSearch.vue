@@ -3,7 +3,7 @@
         <transition name="search-container" @enter="onEnter">
             <div v-show="searchActive" class="search-container" @click="onSearchContainerClick">
                 <i class="pi pi-search"></i>
-                <InputText ref="searchInput" type="text" name="search" placeholder="Search" @keydown="onInputKeydown" />
+                <InputText ref="searchInput" type="text" name="search" placeholder="Pesquisar" @keydown="onInputKeydown" />
             </div>
         </transition>
     </div>

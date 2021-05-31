@@ -54,13 +54,15 @@
 </template>
 
 <script>
-import EventBus from "./event-bus";
+import EventBus from "../event-bus";
 import AppTopBar from "./AppTopbar";
 import AppFooter from "./AppFooter";
 import AppConfig from "./AppConfig";
 import AppMenu from "./AppMenu";
 import AppSearch from "./AppSearch";
 import AppRightMenu from "./AppRightMenu";
+
+
 
 export default {
   data() {
@@ -85,183 +87,106 @@ export default {
       configClick: false,
       menu: [
         {
-          label: "Favorites",
+          label: "Backoffice",
           icon: "pi pi-fw pi-home",
-          items: [{ label: "Dashboard", icon: "pi pi-fw pi-home", to: "/dashboard" }],
+          items: [
+              {
+                  label: "Dashboard",
+                  icon: "pi pi-fw pi-home",
+                  to: "/"
+              },
+              {
+                  label: "Pedidos",
+                  icon: "pi pi-fw pi-shopping-cart",
+                  to: "/pedidos",
+              },
+              {
+                  label: "Financeiro",
+                  icon: "pi pi-fw pi-money-bill",
+                  to: "/financeiros",
+              },
+              // {
+              //     label: "Suporte",
+              //     icon: "pi pi-fw pi-comments",
+              //     to: "/clientes",
+              // },
+
+          ],
         },
         { separator: true },
         {
-          label: "UI Kit",
+          label: "Cadastro",
           icon: "pi pi-fw pi-id-card",
           items: [
             {
-              label: "Form Layout",
-              icon: "pi pi-fw pi-id-card",
-              to: "/formlayout",
+              label: "Produtos",
+              icon: "pi pi-fw pi-table",
+              to: "/produtos",
             },
-            { label: "Input", icon: "pi pi-fw pi-check-square", to: "/input" },
-            {
-              label: "Float Label",
-              icon: "pi pi-fw pi-bookmark",
-              to: "/floatlabel",
-            },
-            {
-              label: "Invalid State",
-              icon: "pi pi-fw pi-exclamation-circle",
-              to: "invalidstate",
-            },
-            {
-              label: "Button",
-              icon: "pi pi-fw pi-mobile",
-              to: "/button",
-              class: "rotated-icon",
-            },
-            { label: "Table", icon: "pi pi-fw pi-table", to: "/table" },
-            { label: "List", icon: "pi pi-fw pi-list", to: "/list" },
-            { label: "Tree", icon: "pi pi-fw pi-share-alt", to: "/tree" },
-            { label: "Panel", icon: "pi pi-fw pi-tablet", to: "/panel" },
-            { label: "Overlay", icon: "pi pi-fw pi-clone", to: "/overlay" },
-            { label: "Media", icon: "pi pi-fw pi-image", to: "/media" },
-            { label: "Menu", icon: "pi pi-fw pi-bars", to: "/menu" },
-            { label: "Message", icon: "pi pi-fw pi-comment", to: "/messages" },
-            { label: "File", icon: "pi pi-fw pi-file", to: "/file" },
-            { label: "Chart", icon: "pi pi-fw pi-chart-bar", to: "/chart" },
-            { label: "Misc", icon: "pi pi-fw pi-circle-off", to: "/misc" },
+
+              {
+                  label: "Clientes",
+                  icon: "pi pi-fw pi-id-card",
+                  to: "/clientes",
+              },
+              {
+                  label: "Condições",
+                  icon: "pi pi-fw pi-credit-card",
+                  to: "/condpgtos",
+              },
+              {
+                  label: "Formas de Pagamento",
+                  icon: "pi pi-fw pi-wallet",
+                  to: "/formapgtos",
+              },
+              {
+                  label: "Tipos de Movimento",
+                  icon: "pi pi-fw pi-sitemap",
+                  to: "/tipomovs",
+              },
+              {
+                  label: "Tipos de Frete",
+                  icon: "pi pi-fw pi-external-link",
+                  to: "/tipofretes",
+              },
           ],
         },
         { separator: true },
         {
-          label: "Utilities",
+          label: "Visitação",
           icon: "pi pi-fw pi-desktop",
           items: [
-            { label: "Display", icon: "pi pi-fw pi-desktop", to: "/display" },
             {
-              label: "Elevation",
-              icon: "pi pi-fw pi-external-link",
+                label: "Fluxo de Visitas",
+                icon: "pi pi-fw pi-desktop",
+                to: "/display" },
+            {
+              label: "Pesquisas",
+              icon: "pi pi-fw pi-search",
               to: "/elevation",
             },
-            {
-              label: "Flexbox",
-              icon: "pi pi-fw pi-directions",
-              to: "/flexbox",
-            },
-            { label: "Icons", icon: "pi pi-fw pi-search", to: "/icons" },
-            { label: "Text", icon: "pi pi-fw pi-pencil", to: "/text" },
-            { label: "Widgets", icon: "pi pi-fw pi-star-o", to: "/widgets" },
-            { label: "Grid System", icon: "pi pi-fw pi-th-large", to: "/grid" },
-            {
-              label: "Spacing",
-              icon: "pi pi-fw pi-arrow-right",
-              to: "/spacing",
-            },
-            {
-              label: "Typography",
-              icon: "pi pi-fw pi-align-center",
-              to: "/typography",
-            },
           ],
         },
         { separator: true },
         {
-          label: "Pages",
+          label: "Administrativo",
           icon: "pi pi-fw pi-pencil",
           items: [
-            { label: "Crud", icon: "pi pi-fw pi-pencil", to: "/crud" },
             {
-              label: "Calendar",
+                label: "Usuários",
+                icon: "pi pi-fw pi-user",
+                to: "/users" },
+            {
+              label: "Calendário",
               icon: "pi pi-fw pi-calendar-plus",
-              to: "/calendar",
+              to: "/calendario",
             },
             {
-              label: "Timeline",
-              icon: "pi pi-fw pi-calendar",
-              to: "/timeline",
+              label: "Log de Atividade",
+              icon: "pi pi-fw pi-lock",
+              to: "/activitylogs",
             },
-            {
-              label: "Landing",
-              icon: "pi pi-fw pi-user-plus",
-              url: "assets/pages/landing.html",
-              target: "_blank",
-            },
-            { label: "Login", icon: "pi pi-fw pi-sign-in", to: "/login" },
-            { label: "Invoice", icon: "pi pi-fw pi-dollar", to: "/invoice" },
-            { label: "Help", icon: "pi pi-fw pi-question-circle", to: "/help" },
-            { label: "Error", icon: "pi pi-fw pi-times-circle", to: "/error" },
-            {
-              label: "Not Found",
-              icon: "pi pi-fw pi-exclamation-circle",
-              to: "/notfound",
-            },
-            { label: "Access Denied", icon: "pi pi-fw pi-lock", to: "/access" },
-            { label: "Empty", icon: "pi pi-fw pi-circle-off", to: "/empty" },
-          ],
-        },
-        { separator: true },
-        {
-          label: "Hierarchy",
-          icon: "pi pi-fw pi-align-left",
-          items: [
-            {
-              label: "Submenu 1",
-              icon: "pi pi-fw pi-align-left",
-              items: [
-                {
-                  label: "Submenu 1.1",
-                  icon: "pi pi-fw pi-align-left",
-                  items: [
-                    { label: "Submenu 1.1.1", icon: "pi pi-fw pi-align-left" },
-                    { label: "Submenu 1.1.2", icon: "pi pi-fw pi-align-left" },
-                    { label: "Submenu 1.1.3", icon: "pi pi-fw pi-align-left" },
-                  ],
-                },
-                {
-                  label: "Submenu 1.2",
-                  icon: "pi pi-fw pi-align-left",
-                  items: [
-                    { label: "Submenu 1.2.1", icon: "pi pi-fw pi-align-left" },
-                  ],
-                },
-              ],
-            },
-            {
-              label: "Submenu 2",
-              icon: "pi pi-fw pi-align-left",
-              items: [
-                {
-                  label: "Submenu 2.1",
-                  icon: "pi pi-fw pi-align-left",
-                  items: [
-                    { label: "Submenu 2.1.1", icon: "pi pi-fw pi-align-left" },
-                    { label: "Submenu 2.1.2", icon: "pi pi-fw pi-align-left" },
-                  ],
-                },
-                {
-                  label: "Submenu 2.2",
-                  icon: "pi pi-fw pi-align-left",
-                  items: [
-                    { label: "Submenu 2.2.1", icon: "pi pi-fw pi-align-left" },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        { separator: true },
-        {
-          label: "Start",
-          icon: "pi pi-fw pi-download",
-          items: [
-            {
-              label: "Buy Now",
-              icon: "pi pi-fw pi-shopping-cart",
-              command: () =>
-                window.open("https://www.primefaces.org/store", "_blank"),
-            },
-            {
-              label: "Documentation",
-              icon: "pi pi-fw pi-info-circle",
-              to: "/documentation",
-            },
+
           ],
         },
       ],
@@ -294,7 +219,8 @@ export default {
     AppConfig,
     AppMenu,
     AppSearch,
-    AppRightMenu
+    AppRightMenu,
+    //Produtos,
   },
   watch: {
     $route() {

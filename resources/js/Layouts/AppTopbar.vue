@@ -39,9 +39,9 @@
               <a href="#" tabindex="0">
                 <i class="pi pi-shopping-cart"></i>
                 <div class="notification-item">
-                  <div class="notification-summary">New Order</div>
+                  <div class="notification-summary">Novos Pedidos</div>
                   <div class="notification-detail">
-                    You have <strong>3</strong> new orders.
+                    Você tem <strong>3</strong> novos pedidos.
                   </div>
                 </div>
               </a>
@@ -50,8 +50,10 @@
               <a href="#" tabindex="0">
                 <i class="pi pi-check-square"></i>
                 <div class="notification-item">
-                  <div class="notification-summary">Withdrawn Completed</div>
-                  <div class="notification-detail">Funds are on their way.</div>
+                  <div class="notification-summary">Atendimento Concluído</div>
+                  <div class="notification-detail">
+                    Melhoria material promocional.
+                  </div>
                 </div>
               </a>
             </li>
@@ -59,8 +61,10 @@
               <a href="#" tabindex="0">
                 <i class="pi pi-chart-line"></i>
                 <div class="notification-item">
-                  <div class="notification-summary">Monthly Reports</div>
-                  <div class="notification-detail">New reports are ready.</div>
+                  <div class="notification-summary">Relatórios Mensais</div>
+                  <div class="notification-detail">
+                    Novos relatórios estão prontos.
+                  </div>
                 </div>
               </a>
             </li>
@@ -68,9 +72,9 @@
               <a href="#" tabindex="0">
                 <i class="pi pi-comments"></i>
                 <div class="notification-item">
-                  <div class="notification-summary">Comments</div>
+                  <div class="notification-summary">Comentários</div>
                   <div class="notification-detail">
-                    <strong>2</strong> new comments.
+                    <strong>2</strong> novos comentários.
                   </div>
                 </div>
               </a>
@@ -79,9 +83,11 @@
               <a href="#" tabindex="0">
                 <i class="pi pi-exclamation-circle"></i>
                 <div class="notification-item">
-                  <div class="notification-summary">Chargeback Request</div>
+                  <div class="notification-summary">
+                    Requisição de Devolução
+                  </div>
                   <div class="notification-detail">
-                    <strong>1</strong> to review.
+                    <strong>1</strong> para revisar.
                   </div>
                 </div>
               </a>
@@ -99,33 +105,28 @@
               alt="diamond-layout"
               class="profile-image"
             />
-            <span class="profile-name">Amelia Stone</span>
+            <span class="profile-name">Maria da Penha</span>
           </a>
           <ul class="profile-menu fade-in-up">
             <li>
               <a href="#">
                 <i class="pi pi-user"></i>
-                <span>Profile</span>
+                <span>Meus Dados</span>
               </a>
             </li>
             <li>
               <a href="#">
                 <i class="pi pi-cog"></i>
-                <span>Settings</span>
+                <span>Configurações</span>
               </a>
             </li>
             <li>
               <a href="#">
                 <i class="pi pi-calendar"></i>
-                <span>Calendar</span>
+                <span>Calendário</span>
               </a>
             </li>
-            <li>
-              <a href="#">
-                <i class="pi pi-inbox"></i>
-                <span>Inbox</span>
-              </a>
-            </li>
+            
             <li>
               <a href="#" @click="logout">
                 <i class="pi pi-power-off"></i>

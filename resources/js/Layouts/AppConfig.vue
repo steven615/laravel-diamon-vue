@@ -4,7 +4,7 @@
             <i class="pi pi-cog"></i>
         </a>
         <div class="layout-config" :class="{ 'layout-config-active': configActive }" @click="onConfigClick">
-            <h5>Menu Type</h5>
+            <h5>Tipo de Menu</h5>
             <div class="p-field-radiobutton">
                 <RadioButton name="menuMode" value="static" v-model="d_menuMode" id="mode1" @change="changeMenuMode('static')"></RadioButton>
                 <label for="mode1">Static</label>
@@ -19,7 +19,7 @@
             </div>
             <hr />
 
-            <h5>Color Scheme</h5>
+            <h5>Esquema de Cores</h5>
             <div class="p-field-radiobutton">
                 <RadioButton name="colorScheme" value="dark" v-model="d_colorScheme" id="theme1" @change="changeColorScheme('dark')"></RadioButton>
                 <label for="theme1">Dark</label>
@@ -35,7 +35,7 @@
 
             <hr />
 
-            <h5>Input Style</h5>
+            <h5>Estilo de Inserção</h5>
             <div class="p-field-radiobutton">
                 <RadioButton id="input_outlined" name="inputstyle" value="outlined" :modelValue="inputStyle" @update:modelValue="onChange" />
                 <label for="input_outlined">Outlined</label>
@@ -47,12 +47,12 @@
 
             <hr />
 
-            <h5>Ripple Effect</h5>
+            <h5>Efeitos de Transição</h5>
             <InputSwitch :modelValue="rippleActive" @update:modelValue="onRippleChange"  />
 
             <hr />
 
-            <h5>Menu Themes</h5>
+            <h5>Cor de Menu</h5>
             <div class="layout-themes" v-if="d_colorScheme === 'light'">
                 <div v-for="theme in menuThemes" :key="theme.name">
                     <a style="cursor: pointer" @click="changeMenuTheme(theme.name, theme.logoColor, theme.componentTheme)" :title="theme.name" :style="{ 'background-color': theme.color }"></a>
@@ -64,7 +64,7 @@
 
             <hr />
 
-            <h5>Component Themes</h5>
+            <h5>Cor de Componentes</h5>
             <div class="layout-themes">
                 <div v-for="theme in componentThemes" :key="theme.name">
                     <a style="cursor: pointer" @click="changeComponentTheme(theme.name)" :title="theme.name" :style="{ 'background-color': theme.color }"></a>
@@ -223,7 +223,7 @@ export default {
             this.changeStyleSheetUrl("theme-css", componentTheme, 2);
 
             const appLogoLink = document.getElementById("app-logo");
-            const appLogoUrl = `assets/layout/images/logo-${logoColor === 'dark' ? 'dark' : 'white'}.svg`;
+            const appLogoUrl = `images/layout/logo-${logoColor === 'dark' ? 'dark' : 'white'}.svg`;
 
             if (appLogoLink) {
                 appLogoLink.src = appLogoUrl;

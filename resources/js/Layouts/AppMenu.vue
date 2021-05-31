@@ -1,9 +1,11 @@
 <template>
     <div class="layout-sidebar" @click="onMenuClick">
         <a href="/" class="logo">
-            <img id="app-logo" class="logo-image" src="images/layout/logo-white.svg" alt="diamond-vue" />
-            <span class="app-name">DIAMOND</span>
+            <img id="app-logo" class="logo-image" src="images/layout/logo-m2-white.svg" alt="M2" />
+
+            <span class="app-name">M2</span>
         </a>
+
 
         <div class="layout-menu-container">
             <AppSubmenu :items="model" :layoutMode="layoutMode" :parentMenuItemActive="true" :menuActive="active" :mobileMenuActive="mobileMenuActive" :root="true" @menuitem-click="onMenuItemClick" @root-menuitem-click="onRootMenuItemClick" />

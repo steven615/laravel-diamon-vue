@@ -4,7 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ApplicationController;
+// use App\Http\Controllers\ApplicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,15 +26,16 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/crud', function () {
-    return Inertia::render('Crud');
-})->name('crud');
+    Route::get('/crud', function () {
+        return Inertia::render('Crud');
+    })->name('crud');
 
-Route::middleware('auth:sanctum')->resource('/product', ProductController::class);
+    Route::resource('/product', ProductController::class);
+});
 
-
-Route::get('/{any}', [ApplicationController::class, 'index'])->where('any', '.*');
+// Route::get('/{any}', [ApplicationController::class, 'index'])->where('any', '.*');

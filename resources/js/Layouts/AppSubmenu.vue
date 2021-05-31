@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import EventBus from './event-bus';
+import EventBus from '../event-bus';
 export default {
     name: "appsubmenu",
     emits: ["root-menuitem-click", "menuitem-click"],
