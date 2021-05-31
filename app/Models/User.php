@@ -24,9 +24,22 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'codemp',
+        'filial',
         'name',
         'email',
         'password',
+        'status',
+        'tipo',
+        'estado',
+        'telefone',
+        'consultor',
+        'defconsultor',
+        'cnpj',
+        'bloqsolic',
+        'approved_at',
+        'approved_by',
+        'repres'
     ];
 
     /**
@@ -48,8 +61,8 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+	'approved_at' => 'datetime',
     ];
-
     /**
      * The accessors to append to the model's array form.
      *

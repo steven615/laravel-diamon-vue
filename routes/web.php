@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ApplicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/crud', function () {
 })->name('crud');
 
 Route::middleware('auth:sanctum')->resource('/product', ProductController::class);
+
+
+Route::get('/{any}', [ApplicationController::class, 'index'])->where('any', '.*');
