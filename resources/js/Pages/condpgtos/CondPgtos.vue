@@ -310,8 +310,7 @@
 
 <script>
 import _ from "lodash";
-import App from "@/Layout/App";
-
+import App from "@/Layouts/App";
 import CondPgtosService from "./CondPgtosService";
 
 export default {
