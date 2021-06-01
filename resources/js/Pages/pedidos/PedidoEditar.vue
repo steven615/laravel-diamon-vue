@@ -895,6 +895,9 @@ export default {
     App,
     PedidoTimeline,
   },
+  props: {
+    id: Number
+  },
   data() {
     return {
       loadingCliente: true,
@@ -986,8 +989,7 @@ export default {
     },
 
     baixarNota() {
-      const idPed = this.$route.params.id;
-      console.log("baixarNota: " + idPed);
+      console.log("baixarNota: " + id);
       this.service.downloadPdfNota().then((response) => {
         const url = window.URL.createObjectURL(new Blob([response.data]));
         const link = document.createElement("a");
@@ -1000,8 +1002,7 @@ export default {
     },
 
     baixarBoleto() {
-      const idPed = this.$route.params.id;
-      console.log("baixarBoleto: " + idPed);
+      console.log("baixarBoleto: " + id);
       this.service.downloadPdfBoleto().then((response) => {
         const url = window.URL.createObjectURL(new Blob([response.data]));
         const link = document.createElement("a");
@@ -1178,9 +1179,8 @@ export default {
     },
 
     getPedido() {
-      const idPed = this.$route.params.id;
-      console.log("getPedido: " + idPed);
-      this.service.getPedido(idPed).then((data) => {
+      console.log("getPedido: " + id);
+      this.service.getPedido(id).then((data) => {
         this.pedido = data;
 
         if (data != null && data.cliente != null && data.cliente != "") {
@@ -1258,9 +1258,8 @@ export default {
     },
     getPedidoItens() {
       this.loadingTable = true;
-      const idPed = this.$route.params.id;
 
-      this.service.getItensPedido(idPed).then((data) => {
+      this.service.getItensPedido(id).then((data) => {
         this.pedidoitens = data;
         this.loadingTable = false;
       });

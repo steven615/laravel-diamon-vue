@@ -71,8 +71,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return Inertia::render('pedidos/Pedidos', ['breadcrumb' => ['parent' => 'Cadastro', 'label' => "Pedidos"],]);
     })->name('pedidos');
 
-    Route::get('/pedidoeditar/{id}', function () {
-        return Inertia::render('pedidos/PedidoEditar', ['breadcrumb' => ['parent' => 'Cadastro', 'label' => "Editar Pedidos"],]);
+    Route::get('/pedidoeditar/{id}', function ($id) {
+        return Inertia::render('pedidos/PedidoEditar', 
+        [
+            'breadcrumb' => ['parent' => 'Cadastro', 'label' => "Editar Pedidos"],
+            'id' => $id
+        ]);
     })->name('pedidoeditar');
 
     Route::get('/produtos', function () {
