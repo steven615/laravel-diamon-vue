@@ -93,7 +93,7 @@ export default {
               {
                   label: "Dashboard",
                   icon: "pi pi-fw pi-home",
-                  to: "/"
+                  to: "/dashboard"
               },
               {
                   label: "Pedidos",

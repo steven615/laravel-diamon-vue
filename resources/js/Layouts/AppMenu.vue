@@ -1,6 +1,6 @@
 <template>
     <div class="layout-sidebar" @click="onMenuClick">
-        <a href="/" class="logo">
+        <a href="/dashboard" class="logo">
             <img id="app-logo" class="logo-image" src="images/layout/logo-m2-white.svg" alt="M2" />
 
             <span class="app-name">M2</span>

@@ -357,7 +357,7 @@
 <script>
 import _ from "lodash";
 import App from "@/Layouts/App";
-import ProductService from "@/Services/ProductService";
+// import ProductService from "@/Services/ProductService";
 
 export default {
   components: {

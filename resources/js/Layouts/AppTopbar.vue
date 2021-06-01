@@ -9,7 +9,8 @@
       <div
         class="layout-breadcrumb viewname"
         style="text-transform: uppercase"
-      ></div>
+      ><span>{{$page.props.breadcrumb.label}}</span>
+      </div>
 
       <img
         id="logo-mobile"
