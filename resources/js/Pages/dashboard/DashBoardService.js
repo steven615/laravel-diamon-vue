@@ -44,6 +44,6 @@ export default class ProductService {
     }
 
     getProductsWithOrdersSmall() {
-        return axios.get('./products-orders-small.json').then((res) => res.data.data);
+        // return axios.get('./products-orders-small.json').then((res) => res.data.data);
     }
 }

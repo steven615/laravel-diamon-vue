@@ -71,7 +71,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return Inertia::render('pedidos/Pedidos', ['breadcrumb' => ['parent' => 'Cadastro', 'label' => "Pedidos"],]);
     })->name('pedidos');
 
-    Route::get('/pedidoeditar/:id', function () {
+    Route::get('/pedidoeditar/{id}', function () {
         return Inertia::render('pedidos/PedidoEditar', ['breadcrumb' => ['parent' => 'Cadastro', 'label' => "Editar Pedidos"],]);
     })->name('pedidoeditar');
 
@@ -79,7 +79,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return Inertia::render('produtos/Produtos', ['breadcrumb' => ['parent' => 'Cadastro', 'label' => "Produtos"],]);
     })->name('produtos');
 
-    Route::get('/questioeditar/:id', function () {
+    Route::get('/questioeditar/{id}', function () {
         return Inertia::render('clientes/QuestioSucesso',['breadcrumb' => ['parent' => 'Cadastro', 'label' => "Editar Questionário"],]);
     })->name('questioeditar');
 

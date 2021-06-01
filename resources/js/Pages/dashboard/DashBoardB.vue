@@ -406,7 +406,7 @@ export default {
             //console.log(data);
         });
         this.dashboardService.getProducts().then((data) => (this.productsThisWeek = data));
-        this.dashboardService.getProductsMixed().then((data) => (this.productsLastWeek = data));
+        // this.dashboardService.getProductsMixed().then((data) => (this.productsLastWeek = data));
 
         this.selectedOrderWeek = this.orderWeek[0];
 

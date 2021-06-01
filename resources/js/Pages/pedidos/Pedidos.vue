@@ -132,18 +132,15 @@
 
             <Column>
               <template #body="slotProps">
-                <router-link
-                  :to="{
-                    name: 'pedidoeditar',
-                    params: { id: slotProps.data.id },
-                  }"
+                <inertia-link
+                  :href="`/pedidoeditar/${slotProps.data.id}`"
                   class="logo"
                 >
                   <Button
                     icon="pi pi-eye"
                     class="p-button-rounded p-button-success p-mr-2"
                   />
-                </router-link>
+                </inertia-link>
                 <Button
                   icon="pi pi-ban"
                   v-if="slotProps.data.status == 'A'"
