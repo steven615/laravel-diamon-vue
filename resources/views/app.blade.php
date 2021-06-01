@@ -21,25 +21,32 @@
 
 <body class="font-sans antialiased">
     @inertia
-    <div id="app">
-        <div class="loader-container">
-            <div class="loader">
-                <div class="bottom-section">
-                    <div class="bottom"></div>
-                    <div class="bottom"></div>
-                    <div class="bottom"></div>
-                    <div class="bottom"></div>
-                </div>
-                <div class="top-section">
-                    <div class="bottom"></div>
-                    <div class="bottom"></div>
-                    <div class="bottom"></div>
-                    <div class="bottom"></div>
-                </div>
-                <div class="middle"></div>
+    <div class="loader-container">
+        <div class="loader">
+            <div class="bottom-section">
+                <div class="bottom"></div>
+                <div class="bottom"></div>
+                <div class="bottom"></div>
+                <div class="bottom"></div>
             </div>
+            <div class="top-section">
+                <div class="bottom"></div>
+                <div class="bottom"></div>
+                <div class="bottom"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="middle"></div>
         </div>
     </div>
+
+    <script>
+        let timeInterval = setInterval(() => {
+            if (document.readyState === 'complete') {
+                document.querySelector('.loader-container').style.display = 'none';
+                clearInterval(timeInterval);
+            }
+        }, 100);
+    </script>
 </body>
 
 </html>

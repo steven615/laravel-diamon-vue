@@ -10738,7 +10738,10 @@ p:last-child {
   height: 100%;
   overflow: hidden;
   min-height: 100vh;
-  background: #343A40;
+  background: #343a40;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
 }
 
 .loader {
