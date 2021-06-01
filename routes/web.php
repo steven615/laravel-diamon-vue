@@ -1,8 +1,21 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\ActivityLogController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\CondPgtoController;
+use App\Http\Controllers\EventoController;
+use App\Http\Controllers\FinanceiroController;
+use App\Http\Controllers\FormaPgtoController;
+use App\Http\Controllers\TipoMovController;
+use App\Http\Controllers\TipoFreteController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,4 +98,47 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/:pathMatch(.*)*', function () {
         return Inertia::render('pages/NotFound');
     })->name('not-found');
+});
+
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    Route::resource('/product', ProductController::class);
+
+
+    Route::resource('/pedidos', PedidoController::class)->middleware('cors');
+    Route::get('/pedidoitens', [PedidoController::class, 'getpedidoitens']);
+    Route::get('/pedidoeditar', [PedidoController::class, 'getpedido']);
+    Route::get('/pedidoclientes', [PedidoController::class, 'getpedidoclientes']);
+    Route::get('/pedidocliente', [PedidoController::class, 'getpedidocliente']);
+    Route::get('/pedidotipomovs', [PedidoController::class, 'getpedidotipomovs']);
+    Route::get('/pedidotipomov', [PedidoController::class, 'getpedidotipomov']);
+    Route::get('/pedidocondpgtos', [PedidoController::class, 'getpedidocondpgtos']);
+    Route::get('/pedidocondpgto', [PedidoController::class, 'getpedidocondpgto']);
+    Route::get('/pedidoformapgtos', [PedidoController::class, 'getpedidoformapgtos']);
+    Route::get('/pedidoformapgto', [PedidoController::class, 'getpedidoformapgto']);
+    Route::get('/pedidofretes', [PedidoController::class, 'getpedidofretes']);
+    Route::get('/pedidofrete', [PedidoController::class, 'getpedidofrete']);
+    Route::get('/pedidoprodutos', [PedidoController::class, 'getpedidoprodutos']);
+    Route::get('/pedidoproduto', [PedidoController::class, 'getpedidoproduto']);
+    Route::get('/pedidoitem', [PedidoController::class, 'getpedidoitem']);
+    Route::get('/pedidostop10', [PedidoController::class, 'gettop10']);
+
+    Route::put('/pedidoitem/{id}', [PedidoController::class, 'updatepedidoitem']);
+    Route::get('/pedidoitemdelete', [PedidoController::class, 'deletepedidoitem']);
+    Route::get('/pedidocancela', [PedidoController::class, 'cancelapedido']);
+    Route::get('/pedidoconfirma', [PedidoController::class, 'confirmapedido']);
+
+    Route::resource('/activitylogs', ActivityLogController::class);
+    Route::resource('/produtos', ProdutoController::class);
+    Route::resource('/clientes', ClienteController::class);
+    Route::resource('/condpgtos', CondPgtoController::class);
+    Route::resource('/eventos', EventoController::class);
+    Route::resource('/financeiros', FinanceiroController::class);
+    Route::resource('/formapgtos', FormaPgtoController::class);
+    Route::resource('/tipomovs', TipoMovController::class);
+    Route::resource('/tipofretes', TipoFreteController::class);
+    Route::resource('/users', UsersController::class);
 });

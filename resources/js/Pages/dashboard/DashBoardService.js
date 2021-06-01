@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const baseUrl = process.env.MIX_APP_URL + 'produtos';
+const baseUrl = '/produtos/';
+// const baseUrl = process.env.MIX_APP_URL + 'produtos';
 
 
 export default class ProductService {
@@ -14,7 +15,7 @@ export default class ProductService {
 
 
     getPedidosTop10() {
-        return axios.get(`${process.env.MIX_APP_URL + 'pedidostop10'}`).then((res) =>
+        return axios.get(`pedidostop10`).then((res) =>
             //console.log('getProducts2');
             //console.log(res.data.data);
             res.data.data
