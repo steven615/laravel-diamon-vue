@@ -102,13 +102,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
-    Route::resource('/product', ProductController::class);
-
-
-    Route::resource('/pedidos', PedidoController::class)->middleware('cors');
+    Route::resource('/pedidos', PedidoController::class);
     Route::get('/pedidoitens', [PedidoController::class, 'getpedidoitens']);
     Route::get('/pedidoeditar', [PedidoController::class, 'getpedido']);
     Route::get('/pedidoclientes', [PedidoController::class, 'getpedidoclientes']);

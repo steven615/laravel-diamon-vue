@@ -12616,6 +12616,12 @@ a {
   opacity: 1;
 }
 
+@media (min-width: 993px) {
+  .login-image {
+    background: url(/images/bg-login.jpg?60ab440575cd7fa80f309d43ab54afe7);
+  }
+}
+
 @media (max-width: 992px) {
   .login-body .login-wrapper .login-panel {
     width: 100%;
