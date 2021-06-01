@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const baseUrl = process.env.MIX_APP_URL + 'pedidos';
+const baseUrl = 'pedidos';
 
 
 export default class PedidosService {
@@ -22,77 +22,77 @@ export default class PedidosService {
 
     getPedido(id) {
         const params = { id };
-        return axios.get(process.env.MIX_APP_URL + `pedidoeditar`, {params}).then((res) => res.data.data);
+        return axios.get(`pedidoeditar`, {params}).then((res) => res.data.data);
     }
 
     getCliente(codigo) {
         const params = { codigo };
-        return axios.get(process.env.MIX_APP_URL + `pedidocliente`, {params}).then((res) => res.data.data);
+        return axios.get(`pedidocliente`, {params}).then((res) => res.data.data);
     }
 
     editPedidoItem(id) {
         const params = { id };
-        return axios.get(process.env.MIX_APP_URL + `pedidoitem`, { params } ).then((res) => res.data.data);
+        return axios.get(`pedidoitem`, { params } ).then((res) => res.data.data);
     }
 
     getClientes(){
-        return axios.get(process.env.MIX_APP_URL + `pedidoclientes`).then((res) => res.data.data);
+        return axios.get(`pedidoclientes`).then((res) => res.data.data);
     }
 
     getFretes(){
-        return axios.get(process.env.MIX_APP_URL + `pedidofretes`).then((res) => res.data.data);
+        return axios.get(`pedidofretes`).then((res) => res.data.data);
     }
 
     getFrete(codigo){
         const params = { codigo };
-        return axios.get(process.env.MIX_APP_URL + `pedidofrete`, { params }).then((res) => res.data.data);
+        return axios.get(`pedidofrete`, { params }).then((res) => res.data.data);
     }
 
     getTipoMovs(){
-        return axios.get(process.env.MIX_APP_URL + `pedidotipomovs`).then((res) => res.data.data);
+        return axios.get(`pedidotipomovs`).then((res) => res.data.data);
     }
 
     getTipoMov(codigo){
         const params = { codigo };
-        return axios.get(process.env.MIX_APP_URL + `pedidotipomov`, { params }).then((res) => res.data.data);
+        return axios.get(`pedidotipomov`, { params }).then((res) => res.data.data);
     }
 
     getCondPgtos(){
-        return axios.get(process.env.MIX_APP_URL + `pedidocondpgtos`).then((res) => res.data.data);
+        return axios.get(`pedidocondpgtos`).then((res) => res.data.data);
     }
 
     getCondPgto(codigo){
         const params = { codigo };
-        return axios.get(process.env.MIX_APP_URL + `pedidocondpgto`, { params }).then((res) => res.data.data);
+        return axios.get(`pedidocondpgto`, { params }).then((res) => res.data.data);
     }
 
     getFormaPgtos(){
-        return axios.get(process.env.MIX_APP_URL + `pedidoformapgtos`).then((res) => res.data.data);
+        return axios.get(`pedidoformapgtos`).then((res) => res.data.data);
     }
 
     getFormaPgto(codigo){
         const params = { codigo };
-        return axios.get(process.env.MIX_APP_URL + `pedidoformapgto`, { params }).then((res) => res.data.data);
+        return axios.get(`pedidoformapgto`, { params }).then((res) => res.data.data);
     }
 
     getProdutos(){
-        return axios.get(process.env.MIX_APP_URL + `pedidoprodutos`).then((res) => res.data.data);
+        return axios.get(`pedidoprodutos`).then((res) => res.data.data);
     }
 
     getProduto(codigo){
         const params = { codigo };
-        return axios.get(process.env.MIX_APP_URL + `pedidoproduto`, { params }).then((res) => res.data.data);
+        return axios.get(`pedidoproduto`, { params }).then((res) => res.data.data);
     }
 
     getPedidoItem(id){
         const params = { id };
-        return axios.get(process.env.MIX_APP_URL + `pedidoitem`, { params }).then((res) => res.data.data);
+        return axios.get(`pedidoitem`, { params }).then((res) => res.data.data);
     }
 
     getItensPedido(pedido_id) {
         //console.log('123456');
         const params = { pedido_id };
-        return axios.get(process.env.MIX_APP_URL + `pedidoitens`, { params }).then((res) => res.data.data);
+        return axios.get(`pedidoitens`, { params }).then((res) => res.data.data);
     }
 
     getAll(filter) {
@@ -120,23 +120,23 @@ export default class PedidosService {
     }
 
     updatePedidoItem(pedidoitem) {
-        return axios.put(process.env.MIX_APP_URL + `pedidoitem/${pedidoitem.id}`, pedidoitem).then((res) => res.data.data);
+        return axios.put(`pedidoitem/${pedidoitem.id}`, pedidoitem).then((res) => res.data.data);
     }
 
     cancelaPedido(id) {
         const params = { id };
-        return axios.get(process.env.MIX_APP_URL + `pedidocancela`, { params }).then((res) => res.data.data);
+        return axios.get(`pedidocancela`, { params }).then((res) => res.data.data);
     }
 
     confirmaPedido(id) {
         const params = { id };
-        return axios.get(process.env.MIX_APP_URL + `pedidoconfirma`, { params }).then((res) => res.data.data);
+        return axios.get(`pedidoconfirma`, { params }).then((res) => res.data.data);
     }
 
     deletePedidoItem(id) {
         // console.log('id deletar');
         // console.log(id);
         const params = { id };
-        return axios.get(process.env.MIX_APP_URL + `pedidoitemdelete`, { params }).then((res) => res.data.ids);
+        return axios.get(`pedidoitemdelete`, { params }).then((res) => res.data.ids);
     }
 }
