@@ -16,12 +16,13 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    // return Inertia::render('Welcome', [
+    //     'canLogin' => Route::has('login'),
+    //     'canRegister' => Route::has('register'),
+    //     'laravelVersion' => Application::VERSION,
+    //     'phpVersion' => PHP_VERSION,
+    // ]);
+    return redirect('/dashboard');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
@@ -66,11 +67,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('produtos');
 
     Route::get('/questioeditar/:id', function () {
-        return Inertia::render(
-            'clientes/QuestioSucesso',
-            ['breadcrumb' =>
-            ['parent' => 'Cadastro', 'label' => "Editar Questionário"],]
-        );
+        return Inertia::render('clientes/QuestioSucesso',['breadcrumb' => ['parent' => 'Cadastro', 'label' => "Editar Questionário"],]);
     })->name('questioeditar');
 
     Route::get('/tipomovs', function () {
