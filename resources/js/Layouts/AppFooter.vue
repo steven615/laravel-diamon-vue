@@ -1,7 +1,7 @@
 <template>
     <div class="layout-footer">
         <div class="footer-logo-container">
-            <img id="footer-logo" src="images/layout/logo-m2-dark.svg" alt="diamond-layout" />
+            <img id="footer-logo" src="/images/layout/logo-m2-dark.svg" alt="diamond-layout" />
             <span class="app-name">M2</span>
         </div>
 

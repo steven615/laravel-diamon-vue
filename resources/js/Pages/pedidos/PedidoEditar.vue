@@ -896,7 +896,7 @@ export default {
     PedidoTimeline,
   },
   props: {
-    id: Number
+    id: String
   },
   data() {
     return {
@@ -1179,8 +1179,7 @@ export default {
     },
 
     getPedido() {
-      console.log("getPedido: " + id);
-      this.service.getPedido(id).then((data) => {
+      this.service.getPedido(this.id).then((data) => {
         this.pedido = data;
 
         if (data != null && data.cliente != null && data.cliente != "") {

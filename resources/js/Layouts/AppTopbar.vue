@@ -15,7 +15,7 @@
       <img
         id="logo-mobile"
         class="mobile-logo"
-        src="images/layout/logo-dark.svg"
+        :src="'/images/layout/logo-dark.svg'"
         alt="diamond-layout"
       />
     </div>
@@ -102,7 +102,7 @@
         >
           <a href="#" @click="onTopbarUserMenuButtonClick">
             <img
-              src="images/avatar/profile.jpg"
+              src="/images/avatar/profile.jpg"
               alt="diamond-layout"
               class="profile-image"
             />
