@@ -7,7 +7,7 @@ const baseUrl = process.env.MIX_APP_URL + 'produtos';
 export default class ProdutoService {
 
     getAll(filter) {
-        const params = { filter };
+        const params = filter ? { filter } : {};
         return axios.get(`${baseUrl}`, { params }).then((res) => res.data.data);
     }
 

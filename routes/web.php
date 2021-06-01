@@ -3,8 +3,6 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\ProductController;
-// use App\Http\Controllers\ApplicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,9 +88,4 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/:pathMatch(.*)*', function () {
         return Inertia::render('pages/NotFound');
     })->name('not-found');
-
-    // api
-    Route::resource('/product', ProductController::class);
 });
-
-// Route::get('/{any}', [ApplicationController::class, 'index'])->where('any', '.*');
